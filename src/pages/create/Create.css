@@ -19,10 +19,15 @@
 	padding: 8px 20px;
 	border: 0;
 	border-radius: 4px;
-	background-color: #58249c;
+	background-color: rgba(2, 35, 224, 0.568);
 	cursor: pointer;
 	text-decoration: none;
 	margin: 20px auto;
+ }
+
+ .create button:hover {
+	background: #fff;
+	color: black;
  }
  .ingredients {
 	display: flex;
