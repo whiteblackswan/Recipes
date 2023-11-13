@@ -48,6 +48,39 @@
       "method": "blah, blah",
       "cookingTime": "55 minutes",
       "id": "VXbN1sK"
+    },
+    {
+      "title": "Curry",
+      "ingredients": [
+        "onions",
+        "rice",
+        "garlic"
+      ],
+      "method": "blah, blah, blah",
+      "cookingTime": "45 minutes",
+      "id": "b8numd1"
+    },
+    {
+      "title": "Curry",
+      "ingredients": [
+        "onions",
+        "tomato",
+        "mushrooms"
+      ],
+      "method": "blah, blah, blah",
+      "cookingTime": "22 minutes",
+      "id": "Y_P4Fnu"
+    },
+    {
+      "title": "Curry",
+      "ingredients": [
+        "tomato",
+        "mushrooms",
+        "onions"
+      ],
+      "method": "blah, blah, blah",
+      "cookingTime": "22 minutes",
+      "id": "7Xf1swh"
     }
   ]
 }
