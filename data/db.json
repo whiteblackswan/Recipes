@@ -81,6 +81,18 @@
       "method": "blah, blah, blah",
       "cookingTime": "22 minutes",
       "id": "7Xf1swh"
+    },
+    {
+      "title": "pork with potato",
+      "ingredients": [
+        "pork",
+        "potato",
+        "salt,pepper,water,oyster sauce,",
+        "garlic,onion"
+      ],
+      "method": "1. cut the onion and garlic\n2. suate the garlic and then 2 minutes after put the onion.\n3.add the pork and let it cooked for 5 minutes and add oyster sauce and little water and let it cooked for 30 minutes\n4. after the pork was litlle tender put the potato and season it with salt and pepper for a good taste and leave it for 10 minutes\n5. serve it with rice ",
+      "cookingTime": "40 minutes",
+      "id": "EtIhkl_"
     }
   ]
 }
