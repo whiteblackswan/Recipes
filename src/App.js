@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import ThemeSelector from './context/ThemeSelector'
 
 
 // page components
@@ -12,6 +12,7 @@ import Recipe from './pages/recipe/Recipe'
 // styles
 import './App.css'
 
+
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
+        <ThemeSelector/>
           <Routes>
             <Route path="/"	element={<Home/>} />
             <Route path="/create"	element={<Create/>} />
