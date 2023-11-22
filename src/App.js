@@ -13,10 +13,8 @@ import Recipe from './pages/recipe/Recipe'
 // styles
 import './App.css'
 
-
 function App() {
   const { mode } = useTheme()
-
 
   return (
     <div className={`App ${mode}`}>
