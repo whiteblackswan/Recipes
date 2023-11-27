@@ -17,9 +17,22 @@ export default function Search() {
   useEffect(() => {
     handleSearchData()
   }, [location])
-
+  
+console.log('location.search.slice(3).toLowerCase()', location.search.slice(3).toLowerCase())
   const handleSearchData = async () => {
-    const results = data?.filter((list) => list.title.toLowerCase().includes(location.search.slice(3).toLowerCase()))
+    const searchValue = location.search.slice(3).toLowerCase()
+    
+    let newValue;
+    if(searchValue.includes('%20')) {
+      console.log("it has asepcial character")
+      newValue =  searchValue.replace(/%20/g, " ")
+    }
+    console.log('newValue', newValue)
+    const results = data?.filter((list, i) => {
+      console.log('list', list)
+      // console.log('i', i)
+    return list.title.toLowerCase().includes(newValue || searchValue)
+    })
     console.log('results', results)
     setSearchData(results)
   }
