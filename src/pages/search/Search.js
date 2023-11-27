@@ -1,24 +1,48 @@
-import { useFetch } from '../../hooks/useFetch'
-import { useLocation } from 'react-router-dom'
-import RecipeList from '../../components/RecipeList'
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+
+import { useTheme } from '../../hooks/useTheme';
+import RecipeList from '../../components/RecipeList';
+import useRecipe from '../../hooks/useRecipe'
 
 // styles
-import './Search.css'
+import './Search.css';
+import { useEffect, useState } from 'react';
 
 export default function Search() {
-  const queryString = useLocation().search
-  const queryParams = new URLSearchParams(queryString)
-  const query = queryParams.get('q')
+  const { error, data, isPending } = useRecipe()
+  const { id } = useParams();
+  let location = useLocation();
+  const [searchData, setSearchData] = useState('')
 
-  const url = 'http://localhost:3000/recipes?q=' + query
-  const { error, isPending, data } = useFetch(url)
+  useEffect(() => {
+    handleSearchData()
+  }, [location])
+  
+console.log('location.search.slice(3).toLowerCase()', location.search.slice(3).toLowerCase())
+  const handleSearchData = async () => {
+    const searchValue = location.search.slice(3).toLowerCase()
+    
+    let newValue;
+    if(searchValue.includes('%20')) {
+      console.log("it has asepcial character")
+      newValue =  searchValue.replace(/%20/g, " ")
+    }
+    console.log('newValue', newValue)
+    const results = data?.filter((list, i) => {
+      console.log('list', list)
+      // console.log('i', i)
+    return list.title.toLowerCase().includes(newValue || searchValue)
+    })
+    console.log('results', results)
+    setSearchData(results)
+  }
 
   return (
     <div>
-      <h2 className="page-title">Recipes including "{query}"</h2>
+      <h2 className="page-title">Recipes including {id}</h2>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
-      {data && <RecipeList recipes={data} />}
+      {searchData && <RecipeList recipes={searchData} />}
     </div>
-  )
+  );
 }
