@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-import { projectFirestore } from '../../firebase/config'
 import RecipeList from '../../components/RecipeList'
 
 // styles

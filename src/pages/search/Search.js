@@ -1,6 +1,5 @@
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
-import { useTheme } from '../../hooks/useTheme';
 import RecipeList from '../../components/RecipeList';
 import useRecipe from '../../hooks/useRecipe'
 
